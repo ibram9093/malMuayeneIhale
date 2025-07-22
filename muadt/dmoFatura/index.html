@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dmo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div id="dosyaSecme">
+            <div>
+                <label id="dosyaAdi" for="input">
+                    DMO Yüklemek için Dosyayı Excel Seçiniz
+                </label>
+                <input type="file" class="form-control" id="input" accept=".xls,.xlsx" hidden>
+            </div>
+            
+            <div>
+                <button id="button" class="btn">Yükle</button>
+                <button id="btnTemizle" class="btn">Temizle</button>
+            </div>
+
+            <div class="uyari" id="uyarı"></div>
+        </div>
+
+
+
+
+    
+        <div id="anabölüm" class="anaSayfa">
+            <button id="btn-print" class="btn">Yazdır</button>
+
+            <div id="baslikKurum">
+                <h4 id="kurumAdi"></h4>
+                <h5 id="alimAdi"></h5>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Taşınır Kodu</th>
+                        <th>Malzeme Adı</th>
+                        <th>Talep Miktarı</th>
+                        <th>Aylik Tüketim</th>
+                        <th>cinsi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="excelVerisi" >
+
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./dmoclass.js"></script>
+</body>
+</html>

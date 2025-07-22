@@ -1,0 +1,270 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>deneme</title>
+</head>
+<body>
+
+    <nav id="top-navb">
+        <ul>
+            <li>
+                <a href="muayene.php">Menü</a>
+            </li>
+            <li>
+                <a class="active" href="muayene.php">Muayene Listesi</a>
+            </li>
+            <li>
+                <a class="" href="dtlist.php">DT Listesi</a>
+            </li>
+
+            <li>
+                <a class="" href="ihale.php">İhale Listesi</a>
+            </li>
+            <li>
+                <a href="./faturateslimat/teslimTutanak.html" target="_blank" rel="noopener noreferrer">Fatura Teslimat</a>
+            </li>
+            <li>
+                <a href="./dmoFatura/index.html" target="_blank" rel="noopener noreferrer">DMO İTK Yazdırma</a>
+            </li>
+            <div>
+                                    <a href="/lcikis.php" class="btn">Çıkış</a>
+                            </div>
+        </ul>
+
+    </nav><main>
+    <div class="bilgigiris">
+        <h2>Muayene Ekle</h2>
+        <form action="islem.php" method="post">
+            <div class="bolme">
+                <div>
+                    <label for="datetar">Muayene Tarihi</label>
+                    <input type="date" name="datetar" id="datetar" placeholder="muayene tarihi giriniz" required="">
+                </div>
+                <div>
+                    <label for="firmaadi">Firma adı</label>
+                    <input type="text" name="firmaadi" id="firmaadi" placeholder="Firma adı yazınız." required="">
+                </div>
+                <div>
+                    <label for="faturano">Fatura No</label>
+                    <input type="text" name="faturano" id="faturano" placeholder="Fatura no yazınız." required="">
+                </div>
+                <div>
+                    <label for="iknno">İKN Numarası</label>
+                    <input type="text" name="iknno" id="iknno" placeholder="ikn no yazınız.">
+                    <span class="uyari">
+                        İhale kayıt numarası doğrudan temin ve sağlık market alımlarında boş bırakılabilir. İKN sı EKAP ile girilenler kabul edilir.
+                    </span>
+                </div>
+            </div>
+            <div class="bolme">
+                <div>
+                    <label for="faturasahibi">Muayene Yapan 1</label>
+                    <input type="text" name="faturasahibi" id="faturasahibi" required="" placeholder="Muayene Yapanı yazınız.">
+                </div>
+                <div>
+                    <label for="faturasahibi1">Muayene Yapan 2</label>
+                    <input type="text" name="faturasahibi1" id="faturasahibi1" required="" placeholder="Muayene Yapanı yazınız.">
+                </div>
+                <div>
+                    <label for="faturasahibi2">Muayene Yapan 3</label>
+                    <input type="text" name="faturasahibi2" id="faturasahibi2" required="" placeholder="Muayene Yapanı yazınız.">
+                </div>
+            </div>
+
+            
+            <button type="submit" name="personelekle" class="btn">Muayene Kaydet</button>
+        </form>
+
+        <button type="submit" name="faturaYaz" id="faturaYaz" class="btn">Seçilen Teslimat Faturalarını Yazdır</button>
+    </div>
+
+
+    
+
+
+    </div>
+
+
+</main>
+
+
+<div id="yazdir">
+    <div id="yazilacak">
+        <div id="baslik">
+            <div>
+                <img class="imgBaslik" src="https://www.saglik.gov.tr/images/saglik-bakanligi-logo.png" title="T.C.Sağlık Bakanlığı">          
+            </div>
+            <div>
+                <h3>Bozova Mehmet-Enver YILDIRIM Devlet Hastanesi</h3>
+                <h3>Satın Alma Birimine Teslim Edilecek Faturalar</h3>
+            </div>
+        </div>
+
+        <table class="deneme">
+            <thead>
+                <th>Muayene No</th>
+                <th>Muayene Tarihi</th>
+                <th>Firma adı</th>
+                <th>Fatura No</th>
+            </thead>
+
+            <tbody id="teslim">
+
+
+
+            </tbody>
+
+        </table>
+
+        <div id="zaman">
+            <div id="tarih"></div>
+            <div id="miktar"></div>
+        </div>
+
+        <div id="teslimat">
+            <div>Teslim Eden</div>
+            <div>Teslim Alan</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<footer>
+    <div>design by <a href="mailto:ibram9093@gmail.com">İbrahim Halil GÜLER</a></div>
+</footer>
+
+
+    <script src="../js/faturaYazdir.js"></script>
+
+</body>
+
+
+
+    <div class="contable">
+        <h2>Muayene Listesi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Teslimat Faturası</th>
+                    <th>Muayene No</th>
+                    <th>Muayene Tarihi</th>
+                    <th>Firma adı</th>
+                    <th>Fatura No</th>
+                    <th>İKN No</th>
+                
+                    <th>Muayene Yapan 1</th>
+                    <th>Muayene Yapan 2</th>
+                    <th>Muayene Yapan 3</th>
+                    <th colspan="2">İşlemler</th>
+                </tr>
+            </thead>
+
+            <tbody  id="tablo">
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox" style="width: 2em; height: 2em;"></td>
+                    <td>925</td>
+                    <td>17.01.2023</td>
+                    <td>DESAR ENERJİ</td>
+                    <td>198</td>
+                    <td></td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>SABRİYE KAYA DEMİRAL</td>
+                    <td>ABDULLAH CEYLAN</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=925" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=925" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox" style="width: 2em; height: 2em;"></td>
+                    <td>924</td>
+                    <td>16.01.2023</td>
+                    <td>DOĞA HAŞERE İLAÇLAMA</td>
+                    <td>157</td>
+                    <td></td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ENES DAĞ</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=924" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=924" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox" style="width: 2em; height: 2em;"></td>
+                    <td>923</td>
+                    <td>16.01.2023</td>
+                    <td>RADKOR</td>
+                    <td>3807</td>
+                    <td></td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>FİGEN ATABEY</td>
+                    <td>ZERRİN AYHAN</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=923" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=923" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox" style="width: 2em; height: 2em;"></td>
+                    <td>922</td>
+                    <td>16.01.2023</td>
+                    <td>OMER MATBAA MEDİKAL KAĞIT VE ENDÜSTRİ MALZEMELERİ </td>
+                    <td>YS02022000000109</td>
+                    <td>51/2022</td>
+                    <td>KEMAL TAŞTAN</td>
+                    <td>İHSAN AKGEYİK</td>
+                    <td>HALİL TAŞKAYNATAN</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=922" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=922" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox" style="width: 2em; height: 2em;"></td>
+                    <td>921</td>
+                    <td>11.01.2023</td>
+                    <td>DİCLE</td>
+                    <td>17882941</td>
+                    <td></td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=921" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=921" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox"  style="width: 2em; height: 2em;"></td>
+                    <td>920</td>
+                    <td>11.01.2023</td>
+                    <td>DİCLE</td>
+                    <td>17876103</td>
+                    <td></td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=920" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=920" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            <tr>
+                    <td><input type="checkbox" name="teslimatname" class="teslimCheckbox" style="width: 2em; height: 2em;"></td>
+                    <td>919</td>
+                    <td>11.01.2023</td>
+                    <td>ŞUSKİ</td>
+                    <td>012023</td>
+                    <td></td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td>ALİ YOLDAŞ</td>
+                    <td><a data-title="Düzenle" href="duzenle.php?id=919" class="btnd aciklama" name="perduzenle"><i class="far fa-edit"></i></a></td>
+                    <td><a data-title="Form Oluştur" href="form.php?id=919" class="btnd aciklama" name="perduzenle"><i class="fa fa-id-card" aria-hidden="true"></i></a></td>
+                </tr>
+                            
+            </tbody>
+
+        </table>
+
+        
+
+    </div>

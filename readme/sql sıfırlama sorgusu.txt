@@ -1,0 +1,9 @@
+------------- bütün verileri silme için---------
+DELETE FROM dt  
+DELETE FROM ihaleler 
+DELETE FROM muayene
+
+---------------id ler sıfırlanır-------
+truncate table dt;
+truncate table ihaleler;
+truncate table muayene;

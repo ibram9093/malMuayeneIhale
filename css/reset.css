@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* Box sizing ayarı */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin ve padding sıfırlama */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Liste stillerini kaldır */
+ul[role=list],
+ol[role=list],
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Anchor'ların alt çizgilerini ve renklerini sıfırla */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Görsellerin maksimum genişliği */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elemanlarının miras alması için */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Tüm elemanlara varsayılan geçiş */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Scroll davranışı */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Taban stil ayarı */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}/*# sourceMappingURL=reset.css.map */

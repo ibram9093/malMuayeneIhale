@@ -1,0 +1,167 @@
+@import "reset.css";
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --danger-color: #e63946;
+  --success-color: #2a9d8f;
+}
+
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#login {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+#login h2 {
+  color: var(--dark-color);
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.formlar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.formlar:focus-within {
+  border-color: var(--primary-color);
+}
+
+.formlar img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.formlar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px 5px;
+  font-size: 16px;
+  background: transparent;
+  color: var(--dark-color);
+}
+
+.formlar input::placeholder {
+  color: #aaa;
+}
+
+.formlar-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.formlar-check input {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.formlar-check label {
+  color: var(--dark-color);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.alert-danger, .alert-success {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.alert-danger {
+  background-color: rgba(230, 57, 70, 0.1);
+  color: var(--danger-color);
+  border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+.alert-success {
+  background-color: rgba(42, 157, 143, 0.1);
+  color: var(--success-color);
+  border: 1px solid rgba(42, 157, 143, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  #login {
+    padding: 30px 20px;
+  }
+  
+  #login h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .formlar {
+    margin-bottom: 20px;
+  }
+}

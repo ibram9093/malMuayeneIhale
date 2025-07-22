@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teslim Tutanaği Oluşturma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css" integrity="sha512-FA9cIbtlP61W0PRtX36P6CGRy0vZs0C2Uw26Q1cMmj3xwhftftymr0sj8/YeezDnRwL9wtWw8ZwtCiTDXlXGjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./deneme.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div id="yazilacak">
+            <div>
+                <img src="https://www.saglik.gov.tr/images/saglik-bakanligi-logo.png" title="T.C.Sağlık Bakanlığı">
+            </div>
+            <div>            
+                <h3>Şanlıurfa İl sağlık Müdürlüğü</h3>
+                <h3>Saymanlık Birimine Teslim Edilen Evraklar</h3>
+            </div>
+
+        </div>
+        
+        <div class="bilgi">deneme</div>
+
+        <form id="girisler" >
+            <div>
+                <label for="FaturaNo">Fiş No</label>
+                <input type="text" id="FaturaNo" class="u-full-width" placeholder="Fatura No Giriniz." required autofocus>
+            </div>
+            <div>
+                <label for="FaturaAdi">Fiş Adi</label>
+                <input type="text" id="FaturaAdi" class="u-full-width" placeholder="Firma Adi Giriniz." required>
+            </div>
+            <div>
+                <label for="FaturaTutarı">Fiş Tutarı</label>
+                <input type="text" id="FaturaTutarı" class="u-full-width" placeholder="Fatura Tutarı Giriniz." autocomplete="off" required>
+                <span id="inputtutar"></span>
+            </div>
+
+            <button id="kaydetGuncelle" class="button-primary u-full-width">Kaydet</button>
+            
+        </form>
+
+
+        <table class="u-full-width"  >
+            <thead>
+                <tr>
+                    <th>Fiş No</th>
+                    <th>Fiş Adı</th>
+                    <th>Fiş Tutarı</th> 
+                    <th>işlemler</th>
+                </tr>
+            </thead>
+            
+            <tbody id="veriGirisi">
+
+            </tbody>
+
+            
+
+            <tfoot id="yazdırTemizle">
+                <tr>
+                    <td colspan="2"><button class="btn btn--edit">yazdır</button></td>
+                    <td><button class="btn btn--delete">Temizle</button></td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        
+        <div id="faturalarBilgisi"></div>
+
+        <div id="teslimat">
+            <div>Teslim Eden</div>
+            <div>Teslim Alan</div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
